@@ -25,6 +25,7 @@ export class EvalySecretStrategy extends PassportStrategy(
   }
 
   validate(apiKey: string, secretKey: string): boolean {
+    console.log(apiKey, secretKey)
     return apiKey == secretKey;
   }
 }

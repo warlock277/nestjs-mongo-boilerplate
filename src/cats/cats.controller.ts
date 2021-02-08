@@ -13,14 +13,14 @@ export class CatsController {
   constructor(private readonly catsService: CatsService) {}
 
   @Post()
-  @UseGuards(AuthGuard(['jwt']))
+  //@UseGuards(AuthGuard(['jwt']))
   async create(@Body() createCat: CatDto) {
     return await this.catsService.create(createCat);
   }
 
   @Get()
-  @UseGuards(AuthGuard(['jwt', 'evaly-secret']), GroupsGuard)
-  @Groups('BalanceManager')
+  //@UseGuards(AuthGuard(['jwt', 'evaly-secret']), GroupsGuard)
+  //@Groups('BalanceManager')
   async findAll(): Promise<Cat[]> {
     return this.catsService.findAll();
   }
